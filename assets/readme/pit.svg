@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="128" viewBox="0 0 1200 128">
+  <defs><pattern id="tone" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1" fill="#efede7" fill-opacity=".13"/></pattern><clipPath id="c"><rect x="8" y="8" width="1184" height="112"/></clipPath></defs>
+  <style>
+    @keyframes sl { from { transform: translateX(0); } to { transform: translateX(-420px); } }
+    .sl { animation: sl 1.2s linear infinite; }
+    @keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
+    .arrow { animation: nudge 1.4s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { .sl, .arrow { animation: none; } }
+  </style>
+  <rect width="1200" height="128" fill="#0a0a0a"/>
+  <g clip-path="url(#c)">
+    <rect x="8" y="8" width="1184" height="112" fill="#141414"/>
+    <rect x="8" y="8" width="1184" height="112" fill="url(#tone)"/>
+    <rect class="sl" style="animation-delay:-0.00s" x="860" y="20" width="40" height="1.4" fill="#efede7" opacity=".4"/><rect class="sl" style="animation-delay:-0.21s" x="897" y="49" width="63" height="1.4" fill="#efede7" opacity=".4"/><rect class="sl" style="animation-delay:-0.42s" x="934" y="78" width="86" height="1.4" fill="#efede7" opacity=".4"/><rect class="sl" style="animation-delay:-0.63s" x="971" y="107" width="109" height="1.4" fill="#efede7" opacity=".4"/><rect class="sl" style="animation-delay:-0.84s" x="1008" y="48" width="42" height="1.4" fill="#efede7" opacity=".4"/><rect class="sl" style="animation-delay:-1.05s" x="1045" y="77" width="65" height="1.4" fill="#efede7" opacity=".4"/><rect class="sl" style="animation-delay:-0.06s" x="1082" y="106" width="88" height="1.4" fill="#efede7" opacity=".4"/><rect class="sl" style="animation-delay:-0.27s" x="1119" y="47" width="111" height="1.4" fill="#efede7" opacity=".4"/><rect class="sl" style="animation-delay:-0.48s" x="1156" y="76" width="44" height="1.4" fill="#efede7" opacity=".4"/><rect class="sl" style="animation-delay:-0.69s" x="893" y="105" width="67" height="1.4" fill="#efede7" opacity=".4"/><rect class="sl" style="animation-delay:-0.90s" x="930" y="46" width="90" height="1.4" fill="#efede7" opacity=".4"/><rect class="sl" style="animation-delay:-1.11s" x="967" y="75" width="113" height="1.4" fill="#efede7" opacity=".4"/>
+    <polygon points="8,8 196,8 168,120 8,120" fill="#b3121c"/>
+    <text x="96" y="76" text-anchor="middle" font-family="'Hiragino Sans','Yu Gothic','Meiryo','Noto Sans CJK JP','Noto Sans JP',sans-serif" font-weight="900" font-size="30" fill="#ffffff">ガレージ</text>
+  </g>
+  <rect x="8" y="8" width="1184" height="112" fill="none" stroke="#efede7" stroke-width="4"/>
+  <text x="224" y="62" font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="34" fill="#ffffff">ENTER THE GARAGE</text>
+  <text x="226" y="92" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="14" fill="#8e8c86">masbismaa.github.io/Masbismaa  ·  run sheets, pit radio, and the Night Pass game</text>
+  <g class="arrow"><path d="M1100 44 L1140 64 L1100 84" fill="none" stroke="#e0242f" stroke-width="8" stroke-linejoin="miter"/></g>
+</svg>

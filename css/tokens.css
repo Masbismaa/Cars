@@ -1,0 +1,35 @@
+/* Layout: a manga page. Index rail on the left, panels with thick white borders and black gutters.
+   One committed look: black ink, white line art, screentone. Red is reserved for tail lights and "live". */
+:root {
+  color-scheme: dark;
+  --ink-0: #0a0a0a;      /* page, gutters */
+  --ink-1: #141414;      /* panel fill */
+  --ink-2: #1f1f1f;      /* selected rows */
+  --line: rgba(255, 255, 255, .12);
+  --line-strong: rgba(255, 255, 255, .3);
+  --paper: #efede7;      /* body text, line art */
+  --parchment: #ffffff;  /* headings, panel borders */
+  --muted: #8e8c86;
+  --crimson: #b3121c;    /* tail light */
+  --red: #e0242f;
+  --ember: #ff4a3d;      /* live, current, brake glow */
+  --ok: #efede7;
+  --tone: radial-gradient(rgba(255, 255, 255, .09) 1px, transparent 1.4px) 0 0 / 5px 5px;
+
+  --display: 'Dela Gothic One', 'Arial Black', Impact, sans-serif;
+  --body: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  --step--1: .8125rem;
+  --step-0: 1rem;
+  --step-1: 1.2rem;
+  --step-2: clamp(1.5rem, 1.15rem + 1.5vw, 2.1rem);
+  --step-3: clamp(2rem, 1.3rem + 3.2vw, 3.6rem);
+
+  --rail: 232px;
+  --measure: 66ch;
+  --gutter: clamp(16px, 4vw, 48px);
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { color-scheme: dark; } }
+:root[data-theme="light"], :root[data-theme="dark"] { color-scheme: dark; }

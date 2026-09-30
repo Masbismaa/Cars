@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Garage MBP · Mochammad Bisma Prasetya</title>
+  <meta name="description" content="Mochammad Bisma Prasetya, IT Developer at Spindo: parts, runs, gearbox and a night mountain pass you can drive.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/race.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#driver">Skip to the garage</a>
+
+  <header class="topbar">
+    <a class="topbar-mark" href="#start">MBP</a>
+    <button class="topbar-id" id="archiveId" type="button" aria-describedby="idHint">PLATE MBP 42-50</button>
+    <span class="topbar-hint" id="idHint" role="status"></span>
+    <button class="topbar-menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="index">Index</button>
+  </header>
+
+  <nav class="index" id="index" aria-label="Garage index">
+    <p class="index-title">Index</p>
+    <ol>
+      <li><a href="#driver"><span class="index-mark" aria-hidden="true">運</span>Driver<i class="index-bar"></i></a></li>
+      <li><a href="#parts"><span class="index-mark" aria-hidden="true">改</span>Tune sheet<i class="index-bar"></i></a></li>
+      <li><a href="#runs"><span class="index-mark" aria-hidden="true">走</span>Run log<i class="index-bar"></i></a></li>
+      <li><a href="#gearbox"><span class="index-mark" aria-hidden="true">段</span>Gearbox<i class="index-bar"></i></a></li>
+      <li><a href="#cage"><span class="index-mark" aria-hidden="true">守</span>Roll cage<i class="index-bar"></i></a></li>
+      <li><a href="#telemetry"><span class="index-mark" aria-hidden="true">速</span>Telemetry<i class="index-bar"></i></a></li>
+      <li><a href="#nightpass"><span class="index-mark" aria-hidden="true">峠</span>Night Pass<i class="index-bar"></i></a></li>
+      <li><a href="#radio"><span class="index-mark" aria-hidden="true">問</span>Pit radio<i class="index-bar"></i></a></li>
+      <li><a href="#signal"><span class="index-mark" aria-hidden="true">信</span>Pit wall<i class="index-bar"></i></a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section class="spread" id="start" aria-labelledby="startName">
+      <div class="panel panel--cruise">
+        <canvas id="cruise" role="img" aria-label="Night shot from the side: an original dark coupe with the number 42 and a rear wing cruises down a highway, the lights around it stretched into streaks by its speed"></canvas>
+        <span class="plate" aria-hidden="true">MBP 42-50</span>
+        <p class="panel-note" aria-hidden="true">night run · lane 2 · sixth gear</p>
+        <button class="sound-btn cruise-sound" id="cruiseSound" type="button" aria-pressed="false">Sound off</button>
+      </div>
+      <div class="panel panel--driver">
+        <p class="sfx sfx--drift" aria-hidden="true">ドリフト</p>
+        <p class="kicker">Driver 42 · night run</p>
+        <h1 class="gate-name" id="startName" data-text="Mochammad Bisma Prasetya">Mochammad Bisma Prasetya</h1>
+        <p class="gate-line" id="gateLine"></p>
+        <dl class="ledger" id="ledger"></dl>
+      </div>
+      <div class="panel panel--tach">
+        <canvas id="tach" aria-hidden="true"></canvas>
+        <p class="tach-read" aria-hidden="true"><span>gear</span><b id="gearNow">6</b><span>current</span></p>
+      </div>
+      <nav class="panel panel--go" aria-label="Start here">
+        <a class="go" href="#runs"><span class="go-mark" aria-hidden="true">走</span><b>Open the run log</b><small>RUN-01 on track, 7 runs finished</small></a>
+        <a class="go go--race" href="#nightpass"><span class="go-mark" aria-hidden="true">峠</span><b>Drive Night Pass</b><small>Dodge traffic, drift the corners</small></a>
+      </nav>
+    </section>
+
+    <section class="chapter" id="driver" aria-labelledby="h-driver">
+      <header class="chapter-head" data-no="01" data-mark="運" data-meaning="to drive">
+        <h2 id="h-driver">Driver</h2>
+      </header>
+      <div class="dossier">
+        <div class="prose">
+          <p>I work as an IT Developer at Spindo. I build the internal tools other teams use: an asset inventory, a reporting dashboard, and now an access link register that has to keep secrets from its own administrators.</p>
+          <p>I learn by building the thing. Flask and PostgreSQL started as a practice CRUD app. The same stack now runs ALR, with migrations, tests, and an audit log nobody can edit.</p>
+          <p>Before that: Laravel sites, Flutter apps, and a thesis about stock-keeping for small grocery stores. Three to five years of writing code. Nobody here is pretending it has been ten.</p>
+        </div>
+        <dl class="record" id="record"></dl>
+      </div>
+    </section>
+
+    <section class="chapter" id="parts" aria-labelledby="h-parts">
+      <header class="chapter-head" data-no="02" data-mark="改" data-meaning="to modify">
+        <h2 id="h-parts">Tune sheet</h2>
+      </header>
+      <p class="chapter-note">Every part is rated by what it was used for. Select one to read its sheet.</p>
+      <ul class="tiers" id="tiers" aria-label="Tuning levels"></ul>
+      <div class="dojo">
+        <div class="schools" id="schools"></div>
+        <aside class="inspector" id="inspector" aria-live="polite" aria-label="Part sheet"></aside>
+      </div>
+    </section>
+
+    <section class="chapter" id="runs" aria-labelledby="h-runs">
+      <header class="chapter-head" data-no="03" data-mark="走" data-meaning="to run">
+        <h2 id="h-runs">Run log</h2>
+      </header>
+      <p class="chapter-note">Every project is a run. Open a sheet for the full record. Feature status is exact: implemented means it runs today.</p>
+      <div class="missions" id="missionList"></div>
+    </section>
+
+    <section class="chapter" id="gearbox" aria-labelledby="h-gearbox">
+      <header class="chapter-head" data-no="04" data-mark="段" data-meaning="step, gear">
+        <h2 id="h-gearbox">Gearbox</h2>
+      </header>
+      <p class="chapter-note">How I got here, one gear at a time.</p>
+      <ol class="path" id="path"></ol>
+    </section>
+
+    <section class="chapter" id="cage" aria-labelledby="h-cage">
+      <header class="chapter-head" data-no="05" data-mark="守" data-meaning="to protect">
+        <h2 id="h-cage">Roll cage</h2>
+      </header>
+      <p class="chapter-note">Security is a written list of what I do when I build, with a status next to each item.</p>
+      <div class="table-wrap"><table class="seals" id="sealTable">
+        <thead><tr><th scope="col">Part</th><th scope="col">What it covers</th><th scope="col">Where</th><th scope="col">Status</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </section>
+
+    <section class="chapter" id="telemetry" aria-labelledby="h-telemetry">
+      <header class="chapter-head" data-no="06" data-mark="速" data-meaning="speed">
+        <h2 id="h-telemetry">Telemetry</h2>
+      </header>
+      <p class="chapter-note">Live GitHub activity, regenerated every day by a workflow in this repository. The numbers are GitHub's, not mine.</p>
+      <div class="flow">
+        <figure><img src="https://raw.githubusercontent.com/Masbismaa/Masbismaa/output/laps.svg" alt="Contribution map for the last twelve months" loading="lazy" width="1100" height="250"><figcaption>Lap chart · one cell per day of contributions</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/Masbismaa/Masbismaa/output/stats.svg" alt="Contribution totals: commits, pull requests, issues, repositories" loading="lazy" width="440" height="230"><figcaption>Totals for the year</figcaption></figure>
+        <figure><img src="https://raw.githubusercontent.com/Masbismaa/Masbismaa/output/langs.svg" alt="Most used languages across public repositories" loading="lazy" width="440" height="230"><figcaption>Fuel mix · languages by volume of code</figcaption></figure>
+      </div>
+      <p class="fallback" id="flowFallback" hidden>The telemetry cards appear after the workflow has run once on GitHub. Until then, the live graph is on the <a href="https://github.com/Masbismaa">GitHub profile</a>.</p>
+    </section>
+
+    <section class="chapter" id="nightpass" aria-labelledby="h-nightpass">
+      <header class="chapter-head" data-no="07" data-mark="峠" data-meaning="mountain pass">
+        <h2 id="h-nightpass">Night Pass</h2>
+      </header>
+      <p class="chapter-note">A mountain road after midnight. Dodge traffic, cones and oil. Hold drift through a corner to build the combo; hit something and the combo is gone.</p>
+      <div class="race" id="race">
+        <canvas id="raceCanvas" tabindex="0" aria-label="Night Pass game. Arrow keys or A and D to steer, Space to drift, P to pause, M for sound."></canvas>
+        <div class="race-hud" aria-live="off">
+          <div><span>km/h</span><b id="rSpeed">0</b></div>
+          <div><span>score</span><b id="rScore">0</b></div>
+          <div class="race-combo"><span>drift</span><b id="rCombo">x1</b></div>
+          <div><span>cars</span><b id="rLives">3</b></div>
+          <div><span>best</span><b id="rBest">0</b></div>
+        </div>
+        <button class="sound-btn race-sound" id="rSound" type="button" aria-pressed="true">Sound on</button>
+        <div class="race-overlay" id="rOverlay">
+          <div>
+            <p class="kicker">峠 · night pass</p>
+            <h3 id="rTitle">Ready at the start line</h3>
+            <p id="rMsg">Steer with the arrow keys or A and D. Hold Space to drift. M turns the engine sound on or off. On a phone, use the buttons under the road.</p>
+            <button class="action" id="rStart" type="button">Start the run</button>
+          </div>
+        </div>
+      </div>
+      <div class="race-pad" aria-label="Touch controls">
+        <button class="pad" type="button" data-key="left" aria-label="Steer left">◀</button>
+        <button class="pad pad--drift" type="button" data-key="drift" aria-label="Drift">DRIFT</button>
+        <button class="pad" type="button" data-key="right" aria-label="Steer right">▶</button>
+      </div>
+    </section>
+
+    <section class="chapter" id="radio" aria-labelledby="h-radio">
+      <header class="chapter-head" data-no="08" data-mark="問" data-meaning="to ask">
+        <h2 id="h-radio">Pit radio</h2>
+      </header>
+      <p class="chapter-note">The garage answers questions. Start with <kbd>help</kbd>.</p>
+      <div class="term" id="term">
+        <div class="term-bar"><span>radio@garage-mbp</span><span>channel 42</span></div>
+        <div class="term-out" id="termOut" role="log" aria-live="polite"></div>
+        <form class="term-in" id="termForm" autocomplete="off">
+          <label for="termInput"><span aria-hidden="true">$</span><span class="sr">Command</span></label>
+          <input id="termInput" type="text" spellcheck="false" autocapitalize="off" enterkeyhint="send">
+        </form>
+      </div>
+    </section>
+
+    <section class="chapter sealed" id="sealed" aria-labelledby="h-sealed" hidden>
+      <header class="chapter-head" data-no="--" data-mark="秘" data-meaning="secret">
+        <h2 id="h-sealed">Pit notes</h2>
+      </header>
+      <ul class="notes" id="notes"></ul>
+    </section>
+
+    <footer class="chapter signal" id="signal" aria-labelledby="h-signal">
+      <header class="chapter-head" data-no="09" data-mark="信" data-meaning="message">
+        <h2 id="h-signal">Pit wall</h2>
+      </header>
+      <dl class="record" id="contact"></dl>
+      <p class="colophon">Hand-built with HTML, CSS and a little JavaScript. Every car drawn in code, none of them real. <button class="glyph" id="glyph" type="button" aria-label="Garage mark">∴</button></p>
+    </footer>
+  </main>
+</body>
+</html>

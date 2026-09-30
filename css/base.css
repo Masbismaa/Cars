@@ -1,0 +1,27 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--ink-0); scroll-behavior: smooth; scroll-padding-top: 72px; overflow-x: clip; }
+body {
+  margin: 0; background: var(--ink-0); color: var(--paper);
+  font: 400 var(--step-0)/1.65 var(--body); overflow-x: clip;
+  background-color: var(--ink-0);
+}
+/* screentone behind everything, fading out toward the edges like a printed page */
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; background: var(--tone); -webkit-mask: radial-gradient(ellipse at 65% 25%, #000 0%, transparent 70%); mask: radial-gradient(ellipse at 65% 25%, #000 0%, transparent 70%); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.08; letter-spacing: .01em; margin: 0; color: var(--parchment); text-wrap: balance; }
+p, dl, dd, ol, ul, figure { margin: 0; padding: 0; }
+ol, ul { list-style: none; }
+a { color: var(--paper); text-decoration-color: var(--red); text-underline-offset: 4px; }
+a:hover { color: var(--parchment); }
+kbd, code { font-family: var(--mono); font-size: .9em; }
+kbd { border: 1px solid var(--line-strong); padding: 0 6px; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
+[hidden] { display: none !important; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--parchment); color: var(--ink-0); padding: 8px 12px; font: 500 var(--step--1) var(--mono); }
+.skip:focus { top: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}
